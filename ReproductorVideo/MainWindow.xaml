@@ -8,8 +8,12 @@
         Title="Reproductor " Height="450" Width="800">
 
     <DockPanel x:Name="DockPanel_Reproductor" LastChildFill="True">
-        
-        <DockPanel x:Name="DockPanel_Lateral" DockPanel.Dock="Right">
+        <StackPanel x:Name="StackPanel_Silencio" DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <CheckBox x:Name="CheckBox_Silencio"></CheckBox>
+            <TextBlock x:Name="TextBlock_Silencio" Text="Silencio"/>
+        </StackPanel>
+
+        <DockPanel x:Name="DockPanel_Lateral" DockPanel.Dock="Right" LastChildFill="False">
             
             <StackPanel x:Name="StackPanel_Derecho" Orientation="Vertical" DockPanel.Dock="Top">
                 <Button x:Name="Button_Play" Content="Play" Margin="10,2,10,2" Padding="3"></Button>
@@ -18,7 +22,7 @@
 
             </StackPanel>
 
-            <StackPanel x:Name="StackPanel_Lateral" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+            <StackPanel x:Name="StackPanel_Lateral" DockPanel.Dock="Bottom">
 
                 <RadioButton x:Name="RadioButton_Trailer1" Content="Trailer 1" Padding="3" Checked="RadioButton_Trailer1_Checked"></RadioButton>
                 <RadioButton x:Name="RadioButton_Trailer2" Content="Trailer 2" Padding="3"></RadioButton>
@@ -27,12 +31,9 @@
 
             
         </DockPanel>
-        <StackPanel x:Name="StackPanel_Silencio" DockPanel.Dock="Bottom" Orientation="Horizontal">
-            <CheckBox x:Name="CheckBox_Silencio"></CheckBox>
-            <TextBlock x:Name="TextBlock_Silencio" Text="Silencio"/>
-        </StackPanel>
+       
 
-        <Border x:Name="Border_MediaElement" Margin="2">
+        <Border x:Name="Border_MediaElement" Margin="2" BorderBrush="Black" BorderThickness="2">
             <MediaElement x:Name="MediaElement_Reproductor" LoadedBehavior="Manual" >
 
             </MediaElement>
